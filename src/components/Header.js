@@ -1,10 +1,14 @@
 import React from 'react';
 
+import {useState} from 'react'
+
 import styled from 'styled-components'
 import { IoMenuSharp } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 
 function Header() {
+
+    const[burgerStatus,setBurgerStatus]=useState();
     return(
         <Container>
             <a href='github.com'> 
@@ -22,20 +26,20 @@ function Header() {
                 <RightMenu>
                     <a href='github.com'>Shop</a>
                     <a href='github.com'>Tesla Account</a>
-                    <CustomMenu/>
+                    <CustomMenu  onClick={ () => setBurgerStatus(true)}/>
                 </RightMenu>
-            <BugerNav>
+            <BugerNav show={burgerStatus}>
                 <CloseWrapper>
-                <CustomClose/>
+                <CustomClose  onClick={ () => setBurgerStatus(false)} />
 
                 </CloseWrapper>
-                <li><a href='#'>Existing inventory</a></li>
-                <li><a href='#'>Existing inventory</a></li>
-                <li><a href='#'>Existing inventory</a></li>
-                <li><a href='#'>Existing inventory</a></li>
-                <li><a href='#'>Existing inventory</a></li>
-                <li><a href='#'>Existing inventory</a></li>
-                <li><a href='#'>Existing inventory</a></li>
+                <li><a href='github.com'>Existing inventory</a></li>
+                <li><a href='github.com'>Existing inventory</a></li>
+                <li><a href='github.com'>Existing inventory</a></li>
+                <li><a href='github.com'>Existing inventory</a></li>
+                <li><a href='github.com'>Existing inventory</a></li>
+                <li><a href='github.com'>Existing inventory</a></li>
+                <li><a href='github.com'>Existing inventory</a></li>
 
 
             </BugerNav>
@@ -120,6 +124,8 @@ display:flex;
 flex-direction:column;
 // justify-content:space-between;
 text-align:start;
+transform:${props => props.show ? 'translateX(0)' :'translateX(100%)'}
+transition:transform 0.2s ease-in;
 
 li{
     padding:15px 0;
@@ -135,6 +141,16 @@ a{
 
 
 const CustomClose=styled(IoClose )`
+cursor:pointer;
+
+
+`
+
+
+const CloseWrapper=styled.div`
+display:flex;
+justify-content:flex-end;
+
 
 
 `
