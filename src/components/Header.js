@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components'
+import { IoMenuSharp } from "react-icons/io5";
 
 function Header() {
     return(
@@ -20,7 +21,9 @@ function Header() {
                 <RightMenu>
                     <a href='github.com'>Shop</a>
                     <a href='github.com'>Tesla Account</a>
+                    <CustomMenu/>
                 </RightMenu>
+
 
         </Container>
 
@@ -58,10 +61,15 @@ a{
     flex-wrap:nowrap;
 
 }
+@media(max-width:768px){
+    display:none;
+}
 
 `
 
 const RightMenu=styled.div`
+display:flex;
+align-items:center;
 a{
     font-weight:600;
     text-transform:uppercase;
@@ -69,6 +77,12 @@ a{
     flex-wrap:nowrap;
 
 }
+
+
+
+`
+const CustomMenu=styled(IoMenuSharp)`
+cursor:pointer;
 
 
 

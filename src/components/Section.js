@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components'
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 
 function Section({title,description,backgroundImg, leftBtnText, rightBtnText}) {
-    console.log();
+    AOS.init()
+    console.log({
+        duration : 50000
+    });
     return(
         <Wrap bgImage={backgroundImg}> 
-            <ItemText>
+
+            <ItemText data-aos="fade-up" data-aos-anchor-placement="center-center"  data-aos-duration="2000">
                 <h1>{title}</h1>
                 <p>{description}</p>
             </ItemText>
