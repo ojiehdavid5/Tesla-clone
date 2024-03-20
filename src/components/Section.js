@@ -18,7 +18,7 @@ function Section({title,description,backgroundImg, leftBtnText, rightBtnText}) {
 
             <Buttons>
 
-            <ButtonGroup>
+            <ButtonGroup data-aos="fade-up" data-aos-anchor-placement="center-center"  data-aos-duration="2000">
                 <LeftButton>
             {leftBtnText}
                 </LeftButton>
@@ -45,6 +45,7 @@ export default Section;
 
 
 const Wrap=styled.div`
+z-index:10;
 width:100vw;
 height:100vh;
 //  background-color:orange;
@@ -63,6 +64,7 @@ background-image:${props=>`url("/images/${props.bgImage}")`};
 `
 
 const ItemText=styled.div`
+// z-index:-1;
 padding-top:10vh;
 text-align:center;
 `
